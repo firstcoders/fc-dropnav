@@ -6,29 +6,18 @@
  * @description
  * # fcDropNav
  */
-angular.module('fc-dropnav', ['ui.router', 'ngAnimate'])
-  .directive('fcDropnav', function ($document, $rootScope) {
+angular.module('fc-dropnav', [])
+  .directive('fcDropnav', function ($document, $rootScope, fcDropnavCtrl) {
 
     return {
-      // template: '<div></div>',
       restrict: 'EA',
       link: function postLink($scope, element, attrs) {
 
-        $scope.menuOpen = false;
+        angular.element.addClass('fc-dropnav-navbar');
 
-        $scope.toggleMenu = function() {
-            $scope.menuOpen = !$scope.menuOpen;
-        };
-
-        $scope.setMenuOpen = function(open) {
-            $scope.menuOpen = open;
-        };
-
-        $scope.isMenu = function() {
-            return $scope.menuOpen;
-        };
-
-        $scope.$watch('menuOpen', function(val) {
+        $scope.$watch(function() {
+            return fcDropnavCtrl.isOpen();
+        }, function(val) {
             var body = angular.element($document[0].body);
 
             if (val) {
@@ -38,13 +27,6 @@ angular.module('fc-dropnav', ['ui.router', 'ngAnimate'])
             }
 
         });
-
-        //close the menu when navigating
-        $rootScope.$on('$stateChangeStart',
-            function(event, toState, toParams, fromState, fromParams){
-                $scope.setMenuOpen(false);
-            }
-        );
       }
     };
   });

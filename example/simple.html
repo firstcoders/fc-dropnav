@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="demoapp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../dist/js/fc-dropnav.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../dist/css/fc-dropnav.min.css" />
+    <script>
+        var app = angular.module("demoapp", ['fc-dropnav']);
+    </script>
+</head>
+<body>
+    <nav fc-dropnav class="navbar navbar-fixed-top fc-dropnav-navbar fc-dropnav-animate" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-nav">
+                <a class="navbar-brand" href="#">Demo Site</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a fc-dropnav-handle href="#"><i class="fa fa-bars"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="fc-dropnav-open-menu">
+            <div class="container fc-dropnav-animate">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="thumbnail">
+                            <i class="fa fa-home"></i>
+                            <div class="caption">
+                                <h3>Home</h3>
+                                <p>And back to the beginning...</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="thumbnail">
+                            <i class="fa fa-search"></i>
+                            <div class="caption">
+                                <h3>Search</h3>
+                                <p>Search for stuff</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="thumbnail">
+                            <div class="caption">
+                                <i class="fa fa-question-circle"></i>
+                                <h3>About</h3>
+                                <p>About Us</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="thumbnail">
+                            <i class="fa fa-paper-plane"></i>
+                            <div class="caption">
+                                <h3>Contact</h3>
+                                <p>For if you really want to ask a question</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="thumbnail">
+                            <i class="fa fa-user"></i>
+                            <div class="caption">
+                                <h3>Account</h3>
+                                <p>Your account and preferences</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

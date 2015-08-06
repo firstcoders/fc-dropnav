@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     less: {
       production: {
         files: {
-          "dist/css/fc-dropnav.css": "src/styles/less/fc-dropnav.less"
+          "dist/css/fc-dropnav.css": "src/less/fc-dropnav.less"
         }
       }
     },
