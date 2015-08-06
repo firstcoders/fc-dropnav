@@ -18,12 +18,14 @@ angular.module('fc-dropnav', [])
         element.addClass('fc-dropnav-navbar');
 
         fcDropnavCtrl.onChange(function(isOpen) {
+            $scope.isOpen = isOpen;
+            $scope.$apply();
             if (isOpen) {
                 body.addClass('fc-dropnav-open');
             } else {
                 body.removeClass('fc-dropnav-open');
             }
-        })
+        });
       }
     };
   });
@@ -58,8 +60,6 @@ angular.module('fc-dropnav')
  */
 angular.module('fc-dropnav')
   .directive('fcDropnavToggle', function ($document, fcDropnavCtrl) {
-
-    // var body = angular.element($document[0].body);
 
     return {
       restrict: 'EA',

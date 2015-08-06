@@ -17,15 +17,15 @@ angular.module('fc-dropnav', [])
 
         element.addClass('fc-dropnav-navbar');
 
-        $scope.fcDropnavCtrl = fcDropnavCtrl;
-
         fcDropnavCtrl.onChange(function(isOpen) {
+            $scope.isOpen = isOpen;
+            $scope.$apply();
             if (isOpen) {
                 body.addClass('fc-dropnav-open');
             } else {
                 body.removeClass('fc-dropnav-open');
             }
-        })
+        });
       }
     };
   });
