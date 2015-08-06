@@ -3,9 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../dist/js/fc-dropnav.min.js"></script>
+    <script src="../dist/js/fc-dropnav.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../dist/css/fc-dropnav.min.css" />
+    <link rel="stylesheet" href="../dist/css/fc-dropnav.css" />
     <script>
         var app = angular.module("demoapp", ['fc-dropnav']);
     </script>
@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <nav fc-dropnav class="navbar navbar-fixed-top fc-dropnav-navbar fc-dropnav-animate" role="navigation">
+    <nav fc-dropnav fc-dropnav-toggle="32" class="navbar navbar-fixed-top fc-dropnav-navbar fc-dropnav-animate" role="navigation">
         <div class="container-fluid">
             <div class="navbar-nav">
                 <a class="navbar-brand" href="#">Demo using bootstrap</a>
