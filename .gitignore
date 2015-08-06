@@ -1,5 +1,4 @@
 node_modules
-dist
 bower_components
 ._.*
 .DS_Store
