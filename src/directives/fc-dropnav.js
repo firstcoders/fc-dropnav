@@ -17,6 +17,8 @@ angular.module('fc-dropnav', [])
 
         element.addClass('fc-dropnav-navbar');
 
+        $scope.fcDropnavCtrl = fcDropnavCtrl;
+
         fcDropnavCtrl.onChange(function(isOpen) {
             if (isOpen) {
                 body.addClass('fc-dropnav-open');
