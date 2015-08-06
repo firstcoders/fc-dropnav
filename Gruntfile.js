@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     concat: {
       pitch: {
         src: [
-          'src/*.js',
+          'src/directives/fc-dropnav.js',
           'src/*/*.js',
         ],
         dest: 'dist/js/fc-dropnav.js',

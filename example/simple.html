@@ -4,21 +4,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../dist/js/fc-dropnav.min.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../dist/css/fc-dropnav.min.css" />
     <script>
         var app = angular.module("demoapp", ['fc-dropnav']);
     </script>
+    <style>
+        .fc-dropnav-open-menu {
+            background-color: #333;
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <nav fc-dropnav class="navbar navbar-fixed-top fc-dropnav-navbar fc-dropnav-animate" role="navigation">
         <div class="container-fluid">
             <div class="navbar-nav">
-                <a class="navbar-brand" href="#">Demo Site</a>
+                <a class="navbar-brand" href="#">Demo using bootstrap</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a fc-dropnav-handle href="#"><i class="fa fa-bars"></i></a>
+                    <a fc-dropnav-handle href="#">Toggle</a>
                 </li>
             </ul>
         </div>

@@ -9,24 +9,21 @@
 angular.module('fc-dropnav', [])
   .directive('fcDropnav', function ($document, $rootScope, fcDropnavCtrl) {
 
+    var body = angular.element($document[0].body);
+
     return {
       restrict: 'EA',
       link: function postLink($scope, element, attrs) {
 
-        angular.element.addClass('fc-dropnav-navbar');
+        element.addClass('fc-dropnav-navbar');
 
-        $scope.$watch(function() {
-            return fcDropnavCtrl.isOpen();
-        }, function(val) {
-            var body = angular.element($document[0].body);
-
-            if (val) {
+        fcDropnavCtrl.onChange(function(isOpen) {
+            if (isOpen) {
                 body.addClass('fc-dropnav-open');
             } else {
                 body.removeClass('fc-dropnav-open');
             }
-
-        });
+        })
       }
     };
   });

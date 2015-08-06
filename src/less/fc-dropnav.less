@@ -1,7 +1,12 @@
 body {
 
     .fc-dropnav-navbar {
-        height: 60px;
+        height: 52px;
+        overflow: hidden;
+    }
+
+    .fc-dropnav-open-menu .fc-dropnav-animate {
+        opacity: 0;
     }
 
     &.fc-dropnav-open {
@@ -14,6 +19,10 @@ body {
         .fc-dropnav-open-menu {
             overflow: auto;
             height: 100%;
+
+            .fc-dropnav-animate {
+                opacity: 1;
+            }
         }
     }
 }
