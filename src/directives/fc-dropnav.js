@@ -19,7 +19,11 @@ angular.module('fc-dropnav', [])
 
         fcDropnavCtrl.onChange(function(isOpen) {
             $scope.isOpen = isOpen;
-            $scope.$apply();
+
+            if(!$scope.$$phase) {
+                $scope.$apply();
+            }
+
             if (isOpen) {
                 body.addClass('fc-dropnav-open');
             } else {
