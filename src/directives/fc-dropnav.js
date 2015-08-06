@@ -7,7 +7,7 @@
  * # fcDropNav
  */
 angular.module('fc-dropnav', [])
-  .directive('fcDropnav', function ($document, $rootScope, fcDropnavCtrl) {
+  .directive('fcDropnav', function ($document, $rootScope, fcDropnavCtrl, $timeout) {
 
     var body = angular.element($document[0].body);
 
@@ -18,11 +18,10 @@ angular.module('fc-dropnav', [])
         element.addClass('fc-dropnav-navbar');
 
         fcDropnavCtrl.onChange(function(isOpen) {
-            $scope.isOpen = isOpen;
-
-            if(!$scope.$$phase) {
-                $scope.$apply();
-            }
+            //run in timeout so it is applied in the next digest loop
+            $timeout(function() {
+                $scope.isOpen = isOpen;
+            });
 
             if (isOpen) {
                 body.addClass('fc-dropnav-open');
