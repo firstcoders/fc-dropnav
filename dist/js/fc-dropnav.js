@@ -71,7 +71,10 @@ angular.module('fc-dropnav')
       },
       link: function postLink($scope, element, attrs) {
         $document.bind("keyup", function(event) {
-          if(event.which === $scope.keyCode) {
+            console.log(angular.element(event.srcElement)[0].tagName);
+          if(event.which === $scope.keyCode &&
+            ['INPUT', 'TEXTAREA'].indexOf(angular.element(event.srcElement)[0].tagName) === -1
+          ) {
             fcDropnavCtrl.toggle();
           }
         });
