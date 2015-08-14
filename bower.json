@@ -17,7 +17,7 @@
   },
   "main": [
     "dist/js/fc-dropnav.js",
-    "dist/css/fc-dropnav.css",
+    "dist/css/fc-dropnav.css"
   ],
   "authors": [
     "Mark Cremer <mark@4dutch.co.uk>"
