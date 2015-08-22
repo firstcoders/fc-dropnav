@@ -12,8 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.3",
-    "angular-ui-router": "~0.2.15"
+    "angular": "~1.4.3"
   },
   "main": [
     "dist/js/fc-dropnav.js",

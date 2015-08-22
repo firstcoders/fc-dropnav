@@ -40,8 +40,8 @@ angular.module('fc-dropnav')
 
         //on destroy remove handlers
         $scope.$on('$destroy', function() {
-          $document.off(handleKeyDown);
-          $document.off(handleKeyUp);
+          $document.off("keydown", handleKeyDown);
+          $document.off("keyup", handleKeyUp);
         });
       }
     };
