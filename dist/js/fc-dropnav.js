@@ -1,5 +1,5 @@
 'use strict';
-
+// Source: src/directives/fc-dropnav.js
 /**
  * @ngdoc directive
  * @name fc-dropnav.directive:fcDropnav
@@ -33,8 +33,7 @@ angular.module('fc-dropnav', [])
     };
   });
 
-'use strict';
-
+// Source: src/directives/fc-dropnav-handle.js
 /**
  * @ngdoc directive
  * @name fc-dropnav.directive:fcDropnav
@@ -53,8 +52,7 @@ angular.module('fc-dropnav')
     };
   });
 
-'use strict';
-
+// Source: src/directives/fc-dropnav-toggle.js
 /**
  * @ngdoc directive
  * @name fc-dropnav.directive:fcDropnavToggle
@@ -62,11 +60,12 @@ angular.module('fc-dropnav')
  * # fcDropNav
  */
 angular.module('fc-dropnav')
-  .directive('fcDropnavToggle', function ($document, fcDropnavCtrl) {
+  .directive('fcDropnavToggle', function ($document, fcDropnavCtrl, $rootScope) {
     return {
       restrict: 'EA',
       scope: {
-        keyCode: '=fcDropnavToggle'
+        keyCode: '=fcDropnavToggle',
+        callback: '&fcDropnavOnToggle',
       },
       link: function postLink($scope, element, attrs) {
         var isKeyCovered = function(e) {
@@ -86,6 +85,12 @@ angular.module('fc-dropnav')
         var handleKeyUp = function(e) {
           if(isKeyCovered(e)) {
             fcDropnavCtrl.toggle();
+
+            if ($scope.callback) {
+                $scope.callback();
+            }
+
+            $rootScope.$emit('dropnavOnToggle');
           }
         };
 
@@ -102,8 +107,7 @@ angular.module('fc-dropnav')
     };
   });
 
-'use strict';
-
+// Source: src/services/fc-dropnav-ctl.js
 /**
  * @ngdoc factory
  * @name fc-dropnav-ctrl.factory:fcDropnavCtrl

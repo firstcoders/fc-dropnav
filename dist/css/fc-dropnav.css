@@ -4,6 +4,7 @@ body .fc-dropnav-navbar {
 }
 body .fc-dropnav-open-menu .fc-dropnav-animate {
   opacity: 0;
+  visibility: hidden;
 }
 body.fc-dropnav-open {
   overflow: hidden;
@@ -17,6 +18,7 @@ body.fc-dropnav-open .fc-dropnav-open-menu {
 }
 body.fc-dropnav-open .fc-dropnav-open-menu .fc-dropnav-animate {
   opacity: 1;
+  visibility: visible;
 }
 .fc-dropnav-animate {
   -webkit-transition: 0.2s ease-out all;
