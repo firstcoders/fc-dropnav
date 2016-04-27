@@ -7,11 +7,12 @@
  * # fcDropNav
  */
 angular.module('fc-dropnav')
-  .directive('fcDropnavToggle', function ($document, fcDropnavCtrl) {
+  .directive('fcDropnavToggle', function ($document, fcDropnavCtrl, $rootScope) {
     return {
       restrict: 'EA',
       scope: {
-        keyCode: '=fcDropnavToggle'
+        keyCode: '=fcDropnavToggle',
+        callback: '&fcDropnavOnToggle',
       },
       link: function postLink($scope, element, attrs) {
         var isKeyCovered = function(e) {
@@ -31,6 +32,12 @@ angular.module('fc-dropnav')
         var handleKeyUp = function(e) {
           if(isKeyCovered(e)) {
             fcDropnavCtrl.toggle();
+
+            if ($scope.callback) {
+                $scope.callback();
+            }
+
+            $rootScope.$emit('dropnavOnToggle');
           }
         };
 
@@ -40,8 +47,8 @@ angular.module('fc-dropnav')
 
         //on destroy remove handlers
         $scope.$on('$destroy', function() {
-          $document.off("keydown", handleKeyDown);
-          $document.off("keyup", handleKeyUp);
+          $document.off(handleKeyDown);
+          $document.off(handleKeyUp);
         });
       }
     };
