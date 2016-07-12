@@ -30,7 +30,7 @@ angular.module('fc-dropnav', [])
                 }
             });
 
-            fcDropnavCtrl.set(attrs.isOpen === 'true')
+            fcDropnavCtrl.set(attrs.fcDropnavDefault === 'open')
         }
     };
 });
