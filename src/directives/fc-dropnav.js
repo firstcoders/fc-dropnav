@@ -31,6 +31,8 @@ angular.module('fc-dropnav', [])
             });
 
             fcDropnavCtrl.set(attrs.fcDropnavDefault === 'open')
+
+            $rootScope.$broadcast('FC_DROPNAV_INIT', element);
         }
     };
 });
